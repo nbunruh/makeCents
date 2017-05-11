@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "hanifabo",
-    "password": "ananga1980",
+    "username": "root",
+    "password": "",
     "database": "makecents",
     "host": "127.0.0.1",
     "dialect": "mysql"
