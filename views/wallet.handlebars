@@ -1,0 +1,95 @@
+{{!--<!DOCTYPE html>--}}
+
+{{!--<!--Bootstrap --> 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="assets/js/wallet.js"></script>
+
+<header>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale1">
+	
+</header>--}}
+
+{{!--<body>--}}
+
+	<!--<div class="navbar-header">
+		<div class="container">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid"> 
+			<div class="navbar-header">
+				<meta name="viewport" content="width=device-width">
+			</div>
+			<a class="navbar-brand" href="#">Make Cents</a>
+			<a class="navbar-brand" href="#">Graphs</a>
+			<a class="navbar-brand" href="#">Leaderboard</a>
+			<a class="navbar-brand" href="#">Coupon</a>
+			</div>
+		</nav>
+		</div>
+	</div>-->
+
+<br> 
+<br>
+	<h4 class="alert alert-success">  </h4>
+	<form method="POST" action="/users/wallet">
+	<center><div class="form-group category">
+		<div class="form-group">
+		<label>Input Your Last Expenses</label><br>
+
+		<div class="panel-footer row">
+			<div class="previous">
+				Gas: <input type="value" style="width:600px" class="form-control" placeholder="gas">
+				Groceries: <input type="value" style="width:600px" class="form-control" placeholder="groceries">
+				liesure: <input type="value" style="width:600px" class="form-control" placeholder="liesure">
+			</div>
+
+		<div class="next">
+		<label for="category"><span class="glyphicon glyphicon-user"></span> </label>
+			<select style="width:100px" class="form-control form-element" name='category'>
+					<option class='drop-down' value='groceries' name="groceries"> Groceries </option>	
+					<option class='drop-down' value='gas' name="gas">Gas</option>			
+					<option class='drop-down' value='leisure' name="leisure">Leisure</option>			
+			</select>
+		</div>
+		
+		<div class="last">
+		$<input for="submit" id="myInput" style="width:100px" class="btn btn-primary"> 
+		<button onclick="newElement()" onclick="showButton()">Submit</button>
+		
+		</div>
+		</div>
+
+	</div></center>
+</form>
+</div>
+</section>
+
+<section id="dropdown">
+	<div class="container">
+		History of Expenses: 
+		<ul class="panel-body" id="myUL"></ul>
+	</div>
+</section>
+
+<div class="panel-footer row">
+	<div class="pull-left">
+		<button type="button" class="btn btn-success" href="/users/leaderboards">Go to Leaderboard!</button>
+	</div>
+
+	<div class="pull-right">
+	<button type="button" class="btn btn-success" href="/users/graphs">Go to your Graphs!</button>
+	</div>
+</div>
+{{!--</body>--}}
+
+
+	{{!--<div class="list">
+	</div>--}}
+
+{{!--</html>--}}
