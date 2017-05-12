@@ -7,13 +7,13 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
         },
-         username: {
+        username: {
             type: DataTypes.STRING,
             allowNull: false,
         },
         password: { 
             type: DataTypes.STRING,
-            allowNull: false, 
+            allowNull: false,
         }, 
         email: { 
             type: DataTypes.STRING, 
@@ -22,18 +22,7 @@ module.exports = function (sequelize, DataTypes) {
                 isEmail:true 
             } 
         },
-        },
-        {
-            classMethods: {
-                associate: function(models) {
-                    Users.hasMany(models.Spendings, {
-                    onDelete: 'cascade',
-                    constraint: false
-                    });
-                }
-            }
         }
-        
     );
     return Users;
 };
