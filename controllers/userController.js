@@ -297,7 +297,7 @@ module.exports = function(app) {
                             ]
                         }).then(function (data) {
                     console.log(data);
-                            console.log( JSON.stringify(data.Groups[0].id));
+                            //console.log( JSON.stringify(data.Groups[0].id));
                             res.json(data);
                             // res.json(data.Groups[0].id)
                             //userGroupId = data.Groups,id;
