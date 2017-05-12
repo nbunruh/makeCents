@@ -129,7 +129,6 @@ module.exports = function(app) {
         console.log("id in the deserializeUser method: " + id);
         //storing sessionId of logged in person globally to be referenced later with spendings table.
         sessionId = id;
-        userSessionId = new theUserId(id);
 
         //finding matched id of user in the db
         db.Users.findOne({
@@ -275,7 +274,7 @@ module.exports = function(app) {
         });
 
     app.post("/users/postquestions",function(req, res) {
-        console.log( " userId in the Group Post: "+theUserId.getUserId);
+
         console.log( " ID in the Group Post: "+parseInt(sessionId)+"   "+ typeof(sessionId));
 
             db.group.create({
