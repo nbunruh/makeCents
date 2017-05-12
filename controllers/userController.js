@@ -14,6 +14,15 @@ var sessionId = null;
 //console.log("currently in the burger-api-routes file");
 module.exports = function(app) {
 
+<<<<<<< HEAD
+  app.get("/users/register", function(req, res) {
+      res.render("register", {reg_flag:true});
+  });
+
+  app.get("/users/wallet", function(req, res) {
+      res.render("wallet");
+  });
+=======
     app.get("/", function(req, res) {
         // Finding all-added burgers in the db
         loggedin_b = !req.isAuthenticated();
@@ -36,6 +45,7 @@ module.exports = function(app) {
         console.log("jumping jupiters - optimus primus");
         res.render("questions");
     });
+>>>>>>> 87d5c371bb2d11b81299545b92f19f2deda8d6c7
 
     //route to have user added to the db and register
     app.get("/users/register", function(req, res) {
