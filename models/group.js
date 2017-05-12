@@ -5,28 +5,28 @@ module.exports = function (sequelize, DataTypes) {
     var Groups = sequelize.define('Groups',{
             UserId: {
                 type: DataTypes.INTEGER,
-                allowNull: false
+               //allowNull: false
             },
 
             monthlyBudget: {
                 type: DataTypes.FLOAT,
-                allowNull: false,
+               // allowNull: false,
             },
             weeklyGas: {
                 type: DataTypes.FLOAT,
-                allowNull: false,
+               // allowNull: false,
             },
             weeklyLeisure: {
                 type: DataTypes.FLOAT,
-                allowNull: false,
+               // allowNull: false,
             },
             weeklyGroceries: {
                 type: DataTypes.FLOAT,
-                allowNull: false,
+               // allowNull: false,
             },
-            budget: {
-                type: DataTypes.ENUM,
-                values:['Hihg Group','Personal Account','Money Team', 'SaveGroup'],
+        groupChoice: {
+                type: DataTypes.STRING,
+               // allowNull: false,
             },
         }
     );

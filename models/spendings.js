@@ -5,7 +5,7 @@
 module.exports = function (sequelize, DataTypes) {
     var Spendings = sequelize.define('Spendings',{
 
-            groupId: {
+            GroupId: {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
