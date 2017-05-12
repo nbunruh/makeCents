@@ -25,7 +25,6 @@ module.exports = function(app) {
         //req.flash('message', 'Hi there! Welcome to the DashBoard. To begin, either Login or Register to be on your and save money!');
         res.render("user", {message: 'Hi there! Welcome to the DashBoard. To begin, either Login or Register to be on your and save money!', loggedin_b: loggedin_b});
         //res.json(userInDb);
-
     });
     //route to render the login page.
     app.get("/users/login",function(req, res) {
