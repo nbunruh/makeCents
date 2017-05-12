@@ -37,10 +37,6 @@ module.exports = function(app) {
   app.get("/users/wallet", function(req, res) {
       res.render("wallet");
   });
-  //nolan's route
-  app.get("/users/graphs", function(req, res) {
-      res.render("graphs");
-  });
 
   app.get("/users/questions", function(req, res) {
       res.render("questions");
