@@ -58,7 +58,15 @@ var wallet = {
         $.post("/users/walletCreate", newWallet).done(function() {
             console.log("posted completed!");
         });
+    },
+
+    postGroup: function () {
+        console.log(newWallet);
+        $.post("/users/walletCreate", newWallet).done(function() {
+            console.log("posted completed!");
+        });
     }
+
 };
 
 $( document ).ready(function() {

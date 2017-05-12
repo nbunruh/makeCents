@@ -3,6 +3,9 @@ var path = require("path");
 var bcrypt = require('bcrypt');
 var passport = require("passport");
 var passportlocal = require("passport-local");
+
+var userSessionId = null;
+var userGroupId = "";
 //inverted version of req.session.passport for rendering of the navbar and displays on the main layout
 var loggedin_b = null;
 var loggedInAs = null;
@@ -14,15 +17,6 @@ var sessionId = null;
 //console.log("currently in the burger-api-routes file");
 module.exports = function(app) {
 
-<<<<<<< HEAD
-  app.get("/users/register", function(req, res) {
-      res.render("register", {reg_flag:true});
-  });
-
-  app.get("/users/wallet", function(req, res) {
-      res.render("wallet");
-  });
-=======
     app.get("/", function(req, res) {
         // Finding all-added burgers in the db
         loggedin_b = !req.isAuthenticated();
@@ -40,12 +34,7 @@ module.exports = function(app) {
         console.log("jumping jupiters - optimus primus");
         res.render("login", {message: 'Inncorrect Credentials or not registered with Make Cents.'});
     });
-    //route for questionaire
-    app.get("/users/questions",function(req, res) {
-        console.log("jumping jupiters - optimus primus");
-        res.render("questions");
-    });
->>>>>>> 87d5c371bb2d11b81299545b92f19f2deda8d6c7
+
 
     //route to have user added to the db and register
     app.get("/users/register", function(req, res) {
@@ -141,6 +130,7 @@ module.exports = function(app) {
         console.log("id in the deserializeUser method: " + id);
         //storing sessionId of logged in person globally to be referenced later with spendings table.
         sessionId = id;
+
         //finding matched id of user in the db
         db.Users.findOne({
             where: {
@@ -153,9 +143,13 @@ module.exports = function(app) {
     });
     //passport authentication flow.
     app.post("/users/login",
-        passport.authenticate('local', { successRedirect: '/users/wallet',
+        passport.authenticate('local', { successRedirect: '/users/questions',
             failureRedirect: '/users/login',
             failureFlash: true }));
+
+    // app.post("/users/questions", function(req, res) {
+    //     res.render("wallet");
+    // });
 
     //route for logging out the user.
     app.get("/users/logout", function(req, res) {
@@ -241,31 +235,31 @@ module.exports = function(app) {
     //         });
     // });
 
-    app.post('/api/addgroup', function(req, res){
-        //const created_at = new Date();
-        // const newGroup = req.body.post;
-        db.Groups.create({
-            UserId: '1',
-            groupName: "gooing HOme",
-            groupImage:"com",
-            groupTheme:"Work Harder",
-            // UserId: newGroup.UserId,
-            // groupName: newGroup.groupman,
-            // groupImage: newGroup.groupImage,
-            // groupTheme: newGroup.groupTheme,
-        })
-            .then(function(groupData) {
-                res.json(groupData);
-            });
-    });
+    // app.post('/api/addgroup', function(req, res){
+    //     //const created_at = new Date();
+    //     // const newGroup = req.body.post;
+    //     db.Groups.create({
+    //         UserId: '1',
+    //         groupName: "gooing HOme",
+    //         groupImage:"com",
+    //         groupTheme:"Work Harder",
+    //         // UserId: newGroup.UserId,
+    //         // groupName: newGroup.groupman,
+    //         // groupImage: newGroup.groupImage,
+    //         // groupTheme: newGroup.groupTheme,
+    //     })
+    //         .then(function(groupData) {
+    //             res.json(groupData);
+    //         });
+    // });
 
     app.post('/users/walletCreate', function(req, res){
         // const created_at = new Date();
-        console.log(req);
+        console.log(req.body);
         var total;
         const newSpending = req.body.comment;
         db.Spendings.create({
-            userId: sessionId,
+            GroupId: parseInt(userGroupId),
             groceries: req.body.groceries,
             gas: req.body.gas,
             leisure: req.body.leisure,
@@ -273,6 +267,45 @@ module.exports = function(app) {
         }).then(function(spending){
             res.json(spending);
         });
+    });
+
+    //route for questionaire
+    app.get("/users/questions",function(req, res) {
+            res.render("questions");
+        });
+
+    app.post("/users/postquestions",function(req, res) {
+
+        console.log( " ID in the Group Post: "+parseInt(sessionId)+"   "+ typeof(sessionId));
+
+            db.group.create({
+                UserId: parseInt(sessionId),
+                monthlyBudget: req.body.monthlyBudget,
+                weeklyGas: req.body.gas,
+                weeklyLeisure: req.body.leisure,
+                weeklyGroceries: req.body.groceries,
+                groupChoice: req.body.groupChoice,
+
+            }).then(function (groupData) {
+                db.user.findAll({
+                            where: {
+                                id: parseInt(sessionId),
+                            },
+                            include:[
+                                {
+                                    model:db.group,
+                                }
+                            ]
+                        }).then(function (data) {
+                    console.log(data);
+                            //console.log( JSON.stringify(data.Groups[0].id));
+                            res.json(data);
+                            // res.json(data.Groups[0].id)
+                            //userGroupId = data.Groups,id;
+
+                        })
+               // res.render("wallet");
+            });
     });
 };//end of module.
 
