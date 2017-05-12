@@ -42,6 +42,10 @@ module.exports = function(app) {
       res.render("graphs");
   });
 
+  app.get("/users/questions", function(req, res) {
+      res.render("questions");
+  });
+
   app.post("/users/register", function(req, res) { 
       //grabbing fields from registration form.
       var name = req.body.name; 
