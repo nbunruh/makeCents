@@ -3,25 +3,31 @@
  */
 module.exports = function (sequelize, DataTypes) {
     var Groups = sequelize.define('Groups',{
-
             UserId: {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
 
-            groupName: {
-                type: DataTypes.STRING,
+            monthlyBudget: {
+                type: DataTypes.FLOAT,
                 allowNull: false,
             },
-
-            groupImage: {
-                type: DataTypes.STRING
-            },
-
-            groupTheme: {
-                type: DataTypes.STRING,
+            weeklyGas: {
+                type: DataTypes.FLOAT,
                 allowNull: false,
-            }
+            },
+            weeklyLeisure: {
+                type: DataTypes.FLOAT,
+                allowNull: false,
+            },
+            weeklyGroceries: {
+                type: DataTypes.FLOAT,
+                allowNull: false,
+            },
+            budget: {
+                type: DataTypes.ENUM,
+                values:['Hihg Group','Personal Account','Money Team', 'SaveGroup'],
+            },
         }
     );
     return Groups;

@@ -1,43 +1,44 @@
 <h2 class="page-header"> Questionnaire </h2>
 
-{{#if errors}} 
-    {{#each errors}} 
-        <div class="alert alert-danger"> {{msg}} </div> 
-    {{/each}} 
-{{/if}} 
+{{#if errors}}
+    {{#each errors}}
+        <div class="alert alert-danger"> {{msg}} </div>
+    {{/each}}
+{{/if}}
 
 <form method="POST" action="/users/questions">
     <div class="form-group">
         <label> What is your monthly budget? </label>
         <input type="text" class="form-control"
-        placeholder="Enter amount here" name="monthly-budget">
+               placeholder="Enter amount here" name="monthly-budget">
     </div>
     <div class="form-group">
         <label> How much would you like to spend on gas weekly? </label>
         <input type="text" class="form-control"
-        placeholder="Enter amount here" name="gas">
+               placeholder="Enter amount here" name="gas">
     </div>
     <div class="form-group">
         <label> How much do would you like to spend on leisure weekly </label>
         <input type="text" class="form-control"
-        placeholder="Enter amount here" name="leisure">
+               placeholder="Enter amount here" name="leisure">
     </div>
     <div class="form-group">
         <label> How much would you like to spend on groceries weekly?</label>
         <input type="text" class="form-control"
-        placeholder="Enter amount here" name="groceries">
+               placeholder="Enter amount here" name="groceries">
     </div>
-	<div class="form-group">
-    	<label>Would you like to join a group?</label>
-  	<select class="form-control">	
-  		<option>Join Group</option>
-  		<option>Create Group</option>
-  		<option>Personal Account</option>
-	</select>
+    <div class="form-group">
+        <label>Would you like to join a group?</label>
+        <select class="form-control">
+            <option>High Group</option>
+            <option>Personal Account</option>
+            <option>Money Team</option>
+            <option>Big Savers</option>
+        </select>
     </div>
 
     <br>
-    
+
     <button type="submit" class="btn btn-primary"> submit </button>
 </form>
 <br>
