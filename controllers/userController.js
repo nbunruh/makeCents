@@ -35,6 +35,7 @@ module.exports = function(app) {
         res.render("login", {message: 'Inncorrect Credentials or not registered with Make Cents.'});
     });
 
+
     //route to have user added to the db and register
     app.get("/users/register", function(req, res) {
         res.render("register", {reg_flag:true});

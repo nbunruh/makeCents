@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+    <meta name="google-signin-client_id" content="183216533923-ijnos91eh3bk6dgd7o6dic7gbt1ufjdv.apps.googleusercontent.com">
+	<title>Make Cents - Graphs</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/graphs-style.css">
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+
+    <script type="text/javascript" src="../js/login.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+</head>
+<body>
+    <div class="container">
+      	<div class="header clearfix">
+        	<nav>
+          		<ul class="nav nav-pills pull-right">
+            	<li role="presentation"><a href="/">Home</a></li>
+            	<li role="presentation"><a href="/users/login">Login</a></li>
+            	<li role="presentation"><a href="/users/register">Register</a></li>
+            	<li role="presentation"><a href="/users/logout">Logout</a></li>
+          		</ul>
+        	</nav>
+        	<h3 class="text-muted">Make-Cents Login Page</h3>
+      	</div>
+
+      	<div class="jumbotron">
+        	<p><a class="btn btn-lg btn-success" href="#" role="button">
+          		Compete with your Friends and Make money while being super Thrifty!
+        	</a></p>
+      	</div>
+
+	    	<div class="text-center col-md-12" id="barWell">
+	    	</div>
+	        
+	    	<div class = "col-md-12" id="buffer">
+	    	<br>
+	    	</div>
+	        
+	    	<div class="text-center col-md-12" id="pieWell">
+	    	</div> 
+
+	 	<footer class="footer">
+			<p> &copy; 2017 Make-Cents Inc. </p>
+	 	</footer>
+	</div>
+</body>
+<script>
+    var chart = AmCharts.makeChart( "pieWell", {
+      "type": "pie",
+      "theme": "light",
+      "dataProvider": [ {
+        "country": "Gas",
+        "value": 260
+      }, {
+        "country": "Groceries",
+        "value": 201
+      }, {
+        "country": "Leisure",
+        "value": 65
+      } ],
+      "valueField": "value",
+      "titleField": "country",
+      "outlineAlpha": 0.4,
+      "depth3D": 15,
+      "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+      "angle": 30,
+      "export": {
+        "enabled": true
+      }
+    });
+
+    var chart2 = AmCharts.makeChart("barWell", {
+        "theme": "light",
+        "type": "serial",
+        "startDuration": 2,
+        "dataProvider": [{
+        "country": "Gas",
+        "visits": 4025,
+        "color": "#FF0F00"
+        }, {
+        "country": "Groceries",
+        "visits": 1882,
+        "color": "#FF6600"
+        }, {
+        "country": "Leisure",
+        "visits": 1809,
+        "color": "#FF9E01"
+        } ],
+        "valueAxes": [{
+        "position": "left",
+        "title": "Spending Tracker"
+        }],
+        "graphs": [{
+        "balloonText": "[[category]]: <b>[[value]]</b>",
+        "fillColorsField": "color",
+        "fillAlphas": 1,
+        "lineAlpha": 0.1,
+        "type": "column",
+        "valueField": "visits"
+        }],
+        "depth3D": 20,
+        "angle": 30,
+        "chartCursor": {
+        "categoryBalloonEnabled": false,
+        "cursorAlpha": 0,
+        "zoomable": false
+        },
+        "categoryField": "country",
+        "categoryAxis": {
+        "gridPosition": "start",
+        "labelRotation": 90
+        },
+        "export": {
+        "enabled": true
+    }
+    });
+
+</script>
+</html>
