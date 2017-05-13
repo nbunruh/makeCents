@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<!--Bootstrap --> 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="assets/js/wallet.js"></script>
+
+<header>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale1">
+	
+</header>
+
+<body>
+
+	<div class="navbar-header">
+		<div class="container">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid"> 
+			<div class="navbar-header">
+				<meta name="viewport" content="width=device-width">
+			</div>
+			<a class="navbar-brand" href="#">Make Cents</a>
+			<a class="navbar-brand" href="#">Graphs</a>
+			<a class="navbar-brand" href="#">Leaderboard</a>
+			<a class="navbar-brand" href="#">Coupon</a>
+			</div>
+		</nav>
+		</div>
+	</div>
+
+<br> 
+<br>
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Track Your Expenses</h1>
+			<h3>Input What You've Spent</h3>
+		</div>
+	</div>
+
+	<center><div class="form-group category">
+		<label for="category"><span class="glyphicon glyphicon-user"></span> Expense: </label>
+			<select  class="form-control form-element" name='category'>
+					<option class='drop-down' value='groceries'> Groceries </option>	
+					<option class='drop-down' value='gas'> Gas </option>			
+					<option class='drop-down' value='clothes'>Clothes </option>			
+					<option class='drop-down' value='food'>Food </option>
+					<option class='drop-down' value='housing'>Housing Expenses</option>
+					<option class='drop-down' value='mis'>Other</option>			
+			</select>
+		<input for="submit" class="expense"> 
+		<button>Submit</button>
+	</div></center>
+</body>
+
+
+	<div class="list">
+	</div>
+
+<div style="border solid 1px;" contenteditable=true>Change this text!</div>
+</html>
