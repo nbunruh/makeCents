@@ -1,0 +1,203 @@
+<!--Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page</title>
+
+
+<header>
+ <div class="jumbotron hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-2 col-md-pull-3 get-it">
+                    <h1 class="text-center">Make Cents</h1>
+                    <p class="text-center">Save money and beat your friends!</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body> 
+<section id="top-panel"><img src="public/image/bottompanel.png" style="max-width:100% max-height:100%"></section>
+<br> 
+
+<section class="next"><div class="form-style-5">
+    <form>
+        <fieldset>
+            <legend>Expenses for the Day</legend>
+            <input type="text" name="field1" placeholder="Place">
+            <input type="email" name="field2" placeholder="$ Amount">
+    <label for="job">Category:</label>
+<select id="job" name="field4">
+<optgroup label="Food">
+    <option value="fishkeeping">Groceries</option>
+    <option value="reading">Resturants</option>
+    <option value="boxing">Snacks</option>
+</optgroup>
+<optgroup label="Gas">
+  <option value="football">Gas</option>
+</optgroup>
+<optgroup label="Leisure">
+  <option value="swimming">Vacations</option>
+  <option value="fishing">Shopping</option>
+  <option value="climbing">Gym</option>
+  <option value="other_outdoor">Other</option>
+</optgroup>
+</select>      
+</fieldset>
+
+<fieldset>
+<legend>Notes About Your Spending</legend>
+<textarea name="field3" placeholder="Spent too much or less today!"></textarea>
+</fieldset>
+<input type="submit" value="Submit Info" />
+</form>
+</div>
+</section>
+
+<body>
+
+<section class="features" style="background-color:rgb(110,235,161);">
+    <div class="container">
+        <div class="row" style="width:970px;padding:1px;">
+            <div class="col-md-6">
+               <div class="row icon-features">
+                    <div class="col-xs-4 icon-feature"><i class="glyphicon glyphicon-indent-left"></i>
+                        <p>Graphs </p>
+                    </div>
+                    <div class="col-xs-4 icon-feature"><i class="glyphicon glyphicon-piggy-bank"></i>
+                        <p>Coupons </p>
+                    </div>
+                    <div class="col-md-4 col-md-offset-0 col-xs-4 icon-feature"><i class="glyphicon glyphicon-fire"></i>
+                        <p>Check Leaderboard</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h5>Make Cents© 2016</h5>
+                </div>
+            </div>
+        </div>
+</footer>
+
+</body>
+
+
+
+<style type="text/css">
+.form-style-5{
+    max-width: 500px;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-5 fieldset{
+    border: none;
+}
+.form-style-5 legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.form-style-5 label {
+    display: block;
+    margin-bottom: 8px;
+}
+.form-style-5 input[type="text"],
+.form-style-5 input[type="date"],
+.form-style-5 input[type="datetime"],
+.form-style-5 input[type="email"],
+.form-style-5 input[type="number"],
+.form-style-5 input[type="search"],
+.form-style-5 input[type="time"],
+.form-style-5 input[type="url"],
+.form-style-5 textarea,
+.form-style-5 select {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+
+<style>    
+.form-style-5 input[type="text"]:focus,
+.form-style-5 input[type="date"]:focus,
+.form-style-5 input[type="datetime"]:focus,
+.form-style-5 input[type="email"]:focus,
+.form-style-5 input[type="number"]:focus,
+.form-style-5 input[type="search"]:focus,
+.form-style-5 input[type="time"]:focus,
+.form-style-5 input[type="url"]:focus,
+.form-style-5 textarea:focus,
+.form-style-5 select:focus{
+    background: #d2d9dd;
+}
+.form-style-5 select{
+    -webkit-appearance: menulist-button;
+    height:35px;
+}
+.form-style-5 .number {
+    background: #1abc9c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+.form-style-5 input[type="submit"],
+.form-style-5 input[type="button"]
+{
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #1abc9c;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+.form-style-5 input[type="submit"]:hover,
+.form-style-5 input[type="button"]:hover
+{
+    background: #109177;
+}
+</style>
